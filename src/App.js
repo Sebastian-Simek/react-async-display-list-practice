@@ -22,6 +22,8 @@ function App() {
   return (
     <div className="App">
       <RecipeList recipes={recipes}/>
+
+      <footer>Sebastian Simek 2022</footer>
     </div>
   );
 }

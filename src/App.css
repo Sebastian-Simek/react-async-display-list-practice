@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.recipe-detail{
+  width: 200px;
+  border: solid black 1px;
+  margin: 5px;
+}
+
+.recipe{
+  display: flex;
+  flex-wrap: wrap;
+}
