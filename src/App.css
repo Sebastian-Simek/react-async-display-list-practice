@@ -37,13 +37,23 @@
   }
 }
 
-.recipe-detail{
+ol, ul {
+	list-style: none;
+}
+
+.recipe-detail, .cat-detail{
   width: 200px;
   border: solid black 1px;
   margin: 5px;
+  border-radius: 10px;
 }
 
-.recipe{
+.recipe, .cat {
   display: flex;
   flex-wrap: wrap;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
 }

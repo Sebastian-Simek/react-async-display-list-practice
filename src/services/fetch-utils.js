@@ -5,3 +5,9 @@ export async function getRecipes() {
 
   return response.body;
 }
+
+export async function getCats() {
+  const response = await client.from('cats').select('*');
+
+  return response.body;
+}
