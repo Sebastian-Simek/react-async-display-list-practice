@@ -1,11 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
-// import your arrays here
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { getRecipes } from './services/fetch-utils.js';
+import RecipeList from './RecipeList';
+
 
 function App() {
+
+  const [recipes, setRecipes] = useState([]);
+
+  async function loadRecipeData() {
+    const data = await getRecipes();
+    setRecipes(data);
+  }
+
+  useEffect(() => {
+    loadRecipeData();
+  }, []);
+
+
   return (
     <div className="App">
-        Render all your lists here. Pass the arrays as props.
+      <RecipeList recipes={recipes}/>
     </div>
   );
 }
