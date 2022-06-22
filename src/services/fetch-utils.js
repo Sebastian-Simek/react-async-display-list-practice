@@ -17,3 +17,9 @@ export async function getCandy() {
 
   return response.body;
 }
+
+export async function getBirds() {
+  const response = await client.from('birds').select('*');
+
+  return response.body;
+}

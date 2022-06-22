@@ -41,14 +41,14 @@ ol, ul {
 	list-style: none;
 }
 
-.recipe-detail, .cat-detail, .candy-detail{
+.recipe-detail, .cat-detail, .candy-detail, .bird-detail {
   width: 200px;
   border: solid black 1px;
   margin: 5px;
   border-radius: 10px;
 }
 
-.recipe, .cat, .candy {
+.recipe, .cat, .candy, .bird{
   display: flex;
   flex-wrap: wrap;
 }

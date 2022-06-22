@@ -1,10 +1,11 @@
 import './App.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { getRecipes, getCats, getCandy } from './services/fetch-utils.js';
+import { getRecipes, getCats, getCandy, getBirds } from './services/fetch-utils.js';
 import RecipeList from './RecipeList';
 import CatList from './CatList';
 import CandyList from './CandyList';
+import BirdList from './BirdList';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const [recipes, setRecipes] = useState([]);
   const [cats, setCats] = useState([]);
   const [candy, setCandy] = useState([]);
+  const [birds, setBirds] = useState([]);
 
   async function loadRecipeData() {
     const data = await getRecipes();
@@ -28,10 +30,16 @@ function App() {
     setCandy(data);
   }
 
+  async function loadBirdData() {
+    const data = await getBirds();
+    setBirds(data);
+  }
+
   useEffect(() => {
     loadRecipeData();
     loadCatData();
     loadCandyData();
+    loadBirdData();
   }, []);
 
 
@@ -46,7 +54,9 @@ function App() {
       <label> Candy:
         <CandyList candies={candy}/>
       </label>
-
+      <label> Birds:
+        <BirdList birds={birds}/>
+      </label>
       <footer>Sebastian Simek 2022</footer>
     </div>
   );
