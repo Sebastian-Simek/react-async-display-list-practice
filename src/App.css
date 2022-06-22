@@ -41,19 +41,19 @@ ol, ul {
 	list-style: none;
 }
 
-.recipe-detail, .cat-detail{
+.recipe-detail, .cat-detail, .candy-detail{
   width: 200px;
   border: solid black 1px;
   margin: 5px;
   border-radius: 10px;
 }
 
-.recipe, .cat {
+.recipe, .cat, .candy {
   display: flex;
   flex-wrap: wrap;
 }
 
 footer{
-  position: fixed;
-  bottom: 0;
+  position: relative;
+  bottom: 10;
 }

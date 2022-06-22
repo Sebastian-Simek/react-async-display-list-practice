@@ -1,15 +1,17 @@
 import './App.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { getRecipes, getCats } from './services/fetch-utils.js';
+import { getRecipes, getCats, getCandy } from './services/fetch-utils.js';
 import RecipeList from './RecipeList';
 import CatList from './CatList';
+import CandyList from './CandyList';
 
 
 function App() {
 
   const [recipes, setRecipes] = useState([]);
   const [cats, setCats] = useState([]);
+  const [candy, setCandy] = useState([]);
 
   async function loadRecipeData() {
     const data = await getRecipes();
@@ -21,9 +23,15 @@ function App() {
     setCats(data);
   }
 
+  async function loadCandyData() {
+    const data = await getCandy();
+    setCandy(data);
+  }
+
   useEffect(() => {
     loadRecipeData();
     loadCatData();
+    loadCandyData();
   }, []);
 
 
@@ -34,6 +42,9 @@ function App() {
       </label>
       <label> Cats:
         <CatList cats={cats}/>
+      </label>
+      <label> Candy:
+        <CandyList candies={candy}/>
       </label>
 
       <footer>Sebastian Simek 2022</footer>
